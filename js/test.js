@@ -21,6 +21,11 @@ window.addEventListener('resize', handleWindowResize);
 let messageElement = document.getElementById('message');
 messageElement.innerHTML = "5 + 4 = " + add(5, 4);
 
+let webpageResolutionElement = document.getElementById("webpageResolution");
+webpageResolutionElement.innerHTML = "webpage w: " + window.innerWidth + " h: " + window.innerHeight;
+
+let canvasResolutionElement = document.getElementById("canvasResolution");
+
 let sliderElement = document.getElementById('slider');
 sliderElement.type = 'range';
 sliderElement.min = 0.5;
@@ -46,7 +51,7 @@ function handleWindowResize()
 	canvas.width = window.innerWidth * pixelRatio;
 	canvas.height = window.innerHeight * pixelRatio;
 
-	context.lineWidth = 5;
+	context.lineWidth = 1;
 	
 	context.beginPath();
 	context.moveTo(0, 0);
@@ -70,6 +75,9 @@ function handleWindowResize()
 	
 
 	messageElement.innerHTML = "Resolution: " + pixelRatio;
+
+	canvasResolutionElement.innerHTML = "canvas w: " + canvas.width + " h: " + canvas.height;
+
 }
 
 handleWindowResize();
