@@ -43,8 +43,8 @@ function handleRelease()
 function handleWindowResize()
 {
 	pixelRatio = sliderElement.value;
-	canvas.width = document.documentElement.clientWidth * pixelRatio;
-	canvas.height = document.documentElement.clientHeight * pixelRatio;
+	canvas.width = window.innerWidth * pixelRatio;
+	canvas.height = window.innerHeight * pixelRatio;
 
 	context.lineWidth = 1.0;
 
@@ -62,7 +62,7 @@ function handleWindowResize()
 	// context.moveTo(100, 100);
 	// context.lineTo(100, 101);
 	context.fillStyle = 'yellow';
-	context.fillRect(680, 200, 30, 10);
+	context.fillRect(canvas.width - 10, canvas.height - 10, 10, 10);
 
 	context.fillStyle = 'white';
 	context.fillRect(canvas.width / 2, canvas.height / 2, 10, 10);
