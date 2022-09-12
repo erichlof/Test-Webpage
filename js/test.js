@@ -46,29 +46,28 @@ function handleWindowResize()
 	canvas.width = window.innerWidth * pixelRatio;
 	canvas.height = window.innerHeight * pixelRatio;
 
-	context.lineWidth = 1.0;
-
-	//context.moveTo(0, 0);
-	//context.lineTo(Math.floor(canvas.width * 0.5), Math.floor(canvas.height * 0.5));
+	context.lineWidth = 5;
 	
 	context.beginPath();
 	context.moveTo(0, 0);
 	context.lineTo(Math.floor(canvas.width * 0.5), Math.floor(canvas.height * 0.5));
+	context.strokeStyle = 'blue';
+	context.stroke();
+	context.closePath();
+
+	context.beginPath();
+	context.moveTo(100, 100);
+	context.lineTo(800, 100);
 	context.strokeStyle = 'magenta';
 	context.stroke();
 	context.closePath();
 
-	
-	// context.moveTo(100, 100);
-	// context.lineTo(100, 101);
 	context.fillStyle = 'yellow';
 	context.fillRect(canvas.width - 10, canvas.height - 10, 10, 10);
 
 	context.fillStyle = 'white';
 	context.fillRect(canvas.width / 2, canvas.height / 2, 10, 10);
 	
-	//context.stroke();
-	//context.closePath();
 
 	messageElement.innerHTML = "Resolution: " + pixelRatio;
 }
